@@ -1,7 +1,6 @@
 import React from 'react';
 
-function validInput(){
-  const input = document.querySelector('input').value;
+function validInput(input){
   const result = document.getElementById('result');
 
   for(var i = 0; i < input.length; i++){
@@ -23,7 +22,7 @@ function App() {
     <div className="App">
       <div>
         <span>Binary: </span>
-        <input type="text" maxLength={8} onBlur={() => validInput()}/>
+        <input type="text" maxLength={8} onKeyUp={(event) => validInput(event.target.value)}/>
       </div>
       <div>
         <span>Output: </span>
